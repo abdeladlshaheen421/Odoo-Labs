@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record id="hms_customer_inherit_form" model="ir.ui.view">
+            <field name="name">customer Form View</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                    <field name="industry_id" position="after">
+                        <field name="related_patient_id"/>
+                    </field>
+                    <field name="vat" position="attributes">
+                        <attribute name="required">1</attribute>
+                    </field>
+            </field>
+        </record>
+        <record id="hms_customer_inherit_tree" model="ir.ui.view">
+            <field name="name">customer Tree View</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                    <field name="country_id" position="after">
+                        <field name="website" optional="show"/>
+                    </field>
+            </field>
+        </record>
+    </data>
+</odoo>
